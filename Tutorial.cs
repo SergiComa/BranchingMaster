@@ -12,6 +12,8 @@ namespace FileManager.Common.Models
         public String Name { get; set; }
         public String Surname { get; set; }
         public DateTime DateOfBirth { get; set; }
+		//Añadido magicamente por mi, tu fiel sirviente.
+		public String HeyItsMe {get; set;}
 
         public override bool Equals(object obj)
         {
@@ -19,7 +21,8 @@ namespace FileManager.Common.Models
                    StudentId == student.StudentId &&
                    Name == student.Name &&
                    Surname == student.Surname &&
-                   DateOfBirth == student.DateOfBirth;
+                   DateOfBirth == student.DateOfBirth &&
+				   HeyItsMe == student.HeyItsMe;
         }
 
         public override int GetHashCode()
@@ -29,6 +32,8 @@ namespace FileManager.Common.Models
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Surname);
             hashCode = hashCode * -1521134295 + DateOfBirth.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(HeyItsMe);
+
             return hashCode;
         }
 
